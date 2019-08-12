@@ -9,6 +9,8 @@
 *.user
 *.userosscache
 *.sln.docstates
+# do not store collected data
+*.csv
 
 # User-specific files (MonoDevelop/Xamarin Studio)
 *.userprefs
