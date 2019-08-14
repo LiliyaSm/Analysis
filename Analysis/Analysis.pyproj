@@ -5,8 +5,7 @@
     <ProjectGuid>6e582170-bdad-45e9-bacf-20367aade5d8</ProjectGuid>
     <ProjectHome>
     </ProjectHome>
-    <StartupFile>
-    </StartupFile>
+    <StartupFile>Analysis.py</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>

@@ -7,8 +7,7 @@ def get_req(url):
     username = os.environ['GITHUB_USERNAME']
     password = os.environ['GITHUB_KEY']
     
-    commits = requests.get(url, auth=(username, password))
-    
+    commits = requests.get(url, auth=(username, password))    
     
     return commits.json()
 
@@ -64,8 +63,8 @@ def get_data(commits):
 
 def main():
     #clean file on start
-    try:
-        os.remove('authors.csv') #if os.path.exists("demofile.txt"):
+    try:                                #if os.path.exists("demofile.txt"):
+        os.remove('authors.csv') 
     except:
         pass
 
