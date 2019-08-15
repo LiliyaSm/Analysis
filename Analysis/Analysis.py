@@ -34,9 +34,40 @@ print(quantity.head())
 
 
 
-plt.pyplot.hist(quantity["amount"])
+#plt.pyplot.hist(quantity["amount"])
+
+## set x/y labels and plot title
+#plt.pyplot.xlabel("nickname")
+#plt.pyplot.ylabel("amount")
+#plt.pyplot.title("name")
+
+#pyplot.show()
+
+print(quantity.describe())
+bins = np.linspace(min(quantity["amount"]), max(quantity["amount"]), 4)
+print(bins)
+
+group_names = ['Low', 'Medium', 'High']
+
+quantity['amount-binned'] = pd.cut(quantity['amount'], bins, labels=group_names, include_lowest=True )
+print(quantity[['amount','amount-binned']].head(20))
+
+print(quantity["amount-binned"])
+
+# draw historgram of attribute "amount" with bins = 3 and names for every bin
+pyplot.bar(quantity["nickname"], quantity["amount"]) #(group_names, quantity["amount-binned"].value_counts())
+# set x/y labels and plot title
+plt.pyplot.xlabel("nickname")
+plt.pyplot.ylabel("amount")
+plt.pyplot.title("nickname")
+pyplot.show()
+
+
+# draw historgram of attribute "amount" with bins = 3 but without names for every bin
+plt.pyplot.hist(quantity["amount"], bins = 3)
 
 # set x/y labels and plot title
-plt.pyplot.xlabel("horsepower")
-plt.pyplot.ylabel("amount")
-plt.pyplot.title("horsepower bins")
+plt.pyplot.xlabel("amount")
+plt.pyplot.ylabel("count")
+plt.pyplot.title("amount bins 2")
+pyplot.show()
